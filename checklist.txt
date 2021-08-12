@@ -1,0 +1,16 @@
+[ ] add photos to array
+[ ] nodemon
+[ ] npm install
+[ ] Gallerylist component
+    [ ] html
+    [ ] .map
+    [ ] props
+[ ] Galleryitem component
+    [ ] html
+    [ ] props
+    [ ] state change for description
+[ ] endpoints
+    [ ] GET
+    [ ] PUT
+        [ ] adds likes (changes state)
+[ ] CSS
