@@ -8,16 +8,26 @@ function GalleryItem ({data, photo, photoLikes}) {
         photoLikes(data.id)
     }
 
-    const togglePhoto = () => {
+    const togglePhotoClick = () => {
         console.log('SWITCH');
+        setPhotoOrDescription(!photoOrDescription);
+    }
 
+    const togglePhoto = () => {
+        if (photoOrDescription) {
+            return <img src={photo.path} onClick={togglePhotoClick}/>
+        } else {
+            return <p onClick={togglePhotoClick}>{photo.description}</p>
+        }
     }
 
     return (
         <>
         <div>
-            <img src={photo.path} onClick={togglePhoto}/>
-            <div>
+            <div className="photodes">
+            {togglePhoto()}
+            </div>
+            <div className="buttonlikes">
                 <button onClick={photoLiked}>Like!</button>
                 <h3>{photo.likes} likes</h3>
             </div>
