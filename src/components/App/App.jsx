@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {useState, useEffect} from 'react';
 import Axios from 'axios';
+import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
     }).then(response => {
       console.log('GET received', response.data);
       setGalleryList(response.data);
-    }).catch(errror => {
+    }).catch(error => {
       console.log('GET error', error);
     });
   };
@@ -29,8 +30,9 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <GalleryList
+          galleryList={galleryList}
+        />
       </div>
     );
 }
