@@ -10,7 +10,7 @@ function GalleryItem ({data, photo, photoLikes}) {
             <img src={photo.path}/>
             <div>
                 <button onClick={photoLiked}>Like!</button>
-                <h3>0 likes</h3>
+                <h3>{photo.likes} likes</h3>
             </div>
         </div>
         </>
