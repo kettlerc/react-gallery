@@ -1,11 +1,11 @@
 [X] npm install
-[ ] Gallerylist component
-    [ ] html
-    [ ] .map
-    [ ] props
+[X] Gallerylist component
+    [X] html
+    [X] .map
+    [X] props
 [ ] Galleryitem component
-    [ ] html
-    [ ] props
+    [X] html
+    [X] props
     [ ] state change for description
 [ ] endpoints
     [X] GET

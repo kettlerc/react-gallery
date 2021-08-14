@@ -1,9 +1,19 @@
 
+import GalleryItem from "../GalleryItem/GalleryItem";
 
 function GalleryList({galleryList}) {
     return (
         <>
-            <img src="images/goat_small.jpg"/>
+        <div>
+            {galleryList.map(gallery => {
+                return (
+                    <GalleryItem
+                        key={gallery.id}
+                        photo={gallery}
+                    />
+                )
+            })}
+        </div>
         </>
     )
 }
