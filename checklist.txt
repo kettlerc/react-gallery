@@ -7,10 +7,10 @@
     [X] html
     [X] props
     [ ] state change for description
-[ ] endpoints
+[X] endpoints
     [X] GET
-    [ ] PUT
-        [ ] adds likes (changes state)
+    [X] PUT
+        [X] adds likes (changes state)
 [ ] CSS
 
 [ ] STRETCH

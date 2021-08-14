@@ -7,6 +7,7 @@ import GalleryList from '../GalleryList/GalleryList';
 function App() {
 
   const [galleryList, setGalleryList] = useState([]);
+  const [photoLikes, setPhotoLikes] = useState(0);
 
   useEffect(() => {
     fetchGallery();
@@ -24,6 +25,19 @@ function App() {
     });
   };
 
+  const likePhoto = (id) => {
+    Axios({
+      method: 'PUT',
+      url: `/gallery/like/${id}`
+    }).then(response => {
+      console.log('PUT like', response);
+      setPhotoLikes(response.data)
+      fetchGallery();
+    }).catch (error => {
+      console.log('PUT error', error);
+    })
+  }
+
 
     return (
       <div className="App">
@@ -32,6 +46,7 @@ function App() {
         </header>
         <GalleryList
           galleryList={galleryList}
+          photoLikes={likePhoto}
         />
       </div>
     );

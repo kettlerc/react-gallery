@@ -1,7 +1,7 @@
 
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList({galleryList}) {
+function GalleryList({galleryList, photoLikes}) {
     return (
         <>
         <div>
@@ -9,7 +9,9 @@ function GalleryList({galleryList}) {
                 return (
                     <GalleryItem
                         key={gallery.id}
+                        data={gallery}
                         photo={gallery}
+                        photoLikes={photoLikes}
                     />
                 )
             })}
