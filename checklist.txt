@@ -3,10 +3,10 @@
     [X] html
     [X] .map
     [X] props
-[ ] Galleryitem component
+[X] Galleryitem component
     [X] html
     [X] props
-    [ ] state change for description
+    [X] state change for description
 [X] endpoints
     [X] GET
     [X] PUT
@@ -14,7 +14,7 @@
 [ ] CSS
 
 [ ] STRETCH
-    [ ] use GIT branching
+    [X] use GIT branching
     [ ] create and source database
     [ ] form for new pictures
         [ ] server side POST
