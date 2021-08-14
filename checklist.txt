@@ -1,6 +1,4 @@
-[ ] add photos to array
-[ ] nodemon
-[ ] npm install
+[X] npm install
 [ ] Gallerylist component
     [ ] html
     [ ] .map
@@ -10,7 +8,19 @@
     [ ] props
     [ ] state change for description
 [ ] endpoints
-    [ ] GET
+    [X] GET
     [ ] PUT
         [ ] adds likes (changes state)
 [ ] CSS
+
+[ ] STRETCH
+    [ ] use GIT branching
+    [ ] create and source database
+    [ ] form for new pictures
+        [ ] server side POST
+        [ ] client side POST
+    [ ] delete button
+        [ ] server side DELETE
+        [ ] client side DELETE
+    [ ] material UI styling
+    [ ] implement uppy
