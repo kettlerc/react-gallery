@@ -49,8 +49,20 @@ function App() {
       fetchGallery();
     }).catch (error => {
       console.log('PUT error', error);
-    })
-  }
+    });
+  };
+
+  const deletePhoto = (id) => {
+    console.log('ID is', id);
+    Axios({
+      method: 'DELETE',
+      url: `/gallery/${id}`
+    }).then(response => {
+      console.log('Deleted photo');
+    }).catch(error => {
+      console.log('DELETE error', error);
+    });
+  };
 
 
     return (
@@ -60,10 +72,13 @@ function App() {
         </header>
         <GalleryForm 
           postPhoto={postPhoto}
+          fetchGallery={fetchGallery}
         />
         <GalleryList
           galleryList={galleryList}
           photoLikes={likePhoto}
+          deletePhoto={deletePhoto}
+          fetchGallery={fetchGallery}
         />
       </div>
     );

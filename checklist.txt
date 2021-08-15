@@ -20,8 +20,8 @@
     [X] form for new pictures
         [X] server side POST
         [X] client side POST
-    [ ] delete button
-        [ ] server side DELETE
-        [ ] client side DELETE
+    [X] delete button
+        [X] server side DELETE
+        [X] client side DELETE
     [ ] material UI styling
     [ ] implement uppy

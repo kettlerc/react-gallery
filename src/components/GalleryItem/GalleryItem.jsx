@@ -1,12 +1,8 @@
 import { useState } from "react";
 
-function GalleryItem ({data, photo, photoLikes}) {
+function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
 
     const [photoOrDescription, setPhotoOrDescription] = useState(true);
-
-    const photoLiked = () => {
-        photoLikes(data.id)
-    }
 
     const togglePhotoClick = () => {
         console.log('SWITCH');
@@ -21,6 +17,15 @@ function GalleryItem ({data, photo, photoLikes}) {
         }
     }
 
+    const photoLiked = () => {
+        photoLikes(data.id)
+    }
+
+    const photoDeleted = () => {
+        deletePhoto(data.id);
+        fetchGallery();
+    }
+
     return (
         <>
             <div className="photodes">
@@ -28,6 +33,7 @@ function GalleryItem ({data, photo, photoLikes}) {
             </div>
             <div className="buttonlikes">
                 <button onClick={photoLiked}>Like!</button>
+                <button onClick={photoDeleted}>Delete</button>
                 <h3>{photo.likes} likes</h3>
             </div>
         </>
