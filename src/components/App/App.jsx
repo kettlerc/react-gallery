@@ -52,6 +52,13 @@ function App() {
     })
   }
 
+  const deletePhoto = (id) => {
+    console.log('ID is', id);
+    Axios({
+      method: 'DELETE'
+    })
+  }
+
 
     return (
       <div className="App">

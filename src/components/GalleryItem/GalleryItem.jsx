@@ -28,6 +28,7 @@ function GalleryItem ({data, photo, photoLikes}) {
             </div>
             <div className="buttonlikes">
                 <button onClick={photoLiked}>Like!</button>
+                <button>Delete</button>
                 <h3>{photo.likes} likes</h3>
             </div>
         </>
