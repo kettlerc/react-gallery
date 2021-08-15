@@ -1,4 +1,10 @@
 import { useState } from "react";
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import Paper from "@material-ui/core/Paper"
+
 
 function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
 
@@ -11,9 +17,9 @@ function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
 
     const togglePhoto = () => {
         if (photoOrDescription) {
-            return <img src={photo.path} onClick={togglePhotoClick}/>
+            return <img className="image" src={photo.path} onClick={togglePhotoClick}/>
         } else {
-            return <p onClick={togglePhotoClick}>{photo.description}</p>
+            return <Paper onClick={togglePhotoClick}>{photo.description}</Paper>
         }
     }
 
@@ -28,14 +34,28 @@ function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
 
     return (
         <>
+        <div className="photoDiv">
             <div className="photodes">
             {togglePhoto()}
             </div>
             <div className="buttonlikes">
-                <button onClick={photoLiked}>Like!</button>
-                <button onClick={photoDeleted}>Delete</button>
-                <h3>{photo.likes} likes</h3>
+                <Button 
+                    variant="contained"
+                    color="primary"
+                    onClick={photoLiked}
+                    startIcon={<ThumbUpIcon />}
+                >Like!
+                </Button>
+                <Button 
+                    variant="outlined"
+                    color="secondary"
+                    onClick={photoDeleted}
+                    startIcon={<DeleteOutlineIcon />}
+                >Delete
+                </Button>
+                <Typography variant="h6">{photo.likes} LIKES</Typography>
             </div>
+        </div>
         </>
     )
 }
