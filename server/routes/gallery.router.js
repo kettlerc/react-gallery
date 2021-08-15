@@ -19,6 +19,7 @@ router.get('/', (req, res) => {
         });
 }); // END GET Route
 
+
 // POST Route
 router.post('/', (req, res) => {
     const sqlQuery =`
@@ -39,7 +40,7 @@ router.post('/', (req, res) => {
             console.log('POST error', error);
             res.sendStatus(500);
         });
-});
+}); // END POST Route
 
 
 // PUT Route
@@ -63,5 +64,23 @@ router.put('/like/:id', (req, res) => {
 }); // END PUT Route
 
 
+// DELETE Route
+router.delete('/:id', (req, res) => {
+    const sqlQuery =`
+        DELETE FROM "gallery"
+        WHERE "id" = $1
+    `;
+    const sqlParams = [
+        req.params.id
+    ];
+    pool.query(sqlQuery, sqlParams)
+        .then((result) => {
+            console.log('Photo DELTEd');
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('DELETE error', error);
+            res.sendStatus(500);
+        });
+}); // END DELETE Route
 
 module.exports = router;
