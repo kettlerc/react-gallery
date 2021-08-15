@@ -23,7 +23,6 @@ function GalleryItem ({data, photo, photoLikes}) {
 
     return (
         <>
-        <div>
             <div className="photodes">
             {togglePhoto()}
             </div>
@@ -31,7 +30,6 @@ function GalleryItem ({data, photo, photoLikes}) {
                 <button onClick={photoLiked}>Like!</button>
                 <h3>{photo.likes} likes</h3>
             </div>
-        </div>
         </>
     )
 }

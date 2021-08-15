@@ -4,7 +4,6 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 function GalleryList({galleryList, photoLikes}) {
     return (
         <>
-        <div>
             {galleryList.map(gallery => {
                 return (
                     <GalleryItem
@@ -15,7 +14,6 @@ function GalleryList({galleryList, photoLikes}) {
                     />
                 )
             })}
-        </div>
         </>
     )
 }

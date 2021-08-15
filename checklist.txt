@@ -15,8 +15,8 @@
 
 [ ] STRETCH
     [X] use GIT branching
-    [ ] create database
-    [ ] source database
+    [X] create database
+    [X] source database
     [ ] form for new pictures
         [ ] server side POST
         [ ] client side POST
