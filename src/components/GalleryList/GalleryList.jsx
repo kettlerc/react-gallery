@@ -1,7 +1,7 @@
 
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList({galleryList, photoLikes}) {
+function GalleryList({galleryList, photoLikes, fetchGallery, deletePhoto}) {
     return (
         <>
             {galleryList.map(gallery => {
@@ -11,6 +11,8 @@ function GalleryList({galleryList, photoLikes}) {
                         data={gallery}
                         photo={gallery}
                         photoLikes={photoLikes}
+                        fetchGallery={fetchGallery}
+                        deletePhoto={deletePhoto}
                     />
                 )
             })}
