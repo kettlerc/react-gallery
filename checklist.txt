@@ -17,9 +17,9 @@
     [X] use GIT branching
     [X] create database
     [X] source database
-    [ ] form for new pictures
-        [ ] server side POST
-        [ ] client side POST
+    [X] form for new pictures
+        [X] server side POST
+        [X] client side POST
     [ ] delete button
         [ ] server side DELETE
         [ ] client side DELETE

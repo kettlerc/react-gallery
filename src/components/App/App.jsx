@@ -3,6 +3,7 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import Axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
+import GalleryForm from '../GalleryForm/GalleryForm';
 
 function App() {
 
@@ -25,6 +26,19 @@ function App() {
     });
   };
 
+  const postPhoto = (newPhoto) => {
+    Axios({
+      method: 'POST',
+      url: '/gallery',
+      data: newPhoto
+    }).then(response => {
+      console.log('POST photo', response);
+      fetchGallery();
+    }).catch(error => {
+      console.log('POST error', error);
+    });
+  };
+
   const likePhoto = (id) => {
     Axios({
       method: 'PUT',
@@ -44,6 +58,9 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
+        <GalleryForm 
+          postPhoto={postPhoto}
+        />
         <GalleryList
           galleryList={galleryList}
           photoLikes={likePhoto}
