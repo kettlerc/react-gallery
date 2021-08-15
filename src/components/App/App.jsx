@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import Axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
+import Typography from '@material-ui/core/Typography';
 
 function App() {
 
@@ -58,7 +59,7 @@ function App() {
       method: 'DELETE',
       url: `/gallery/${id}`
     }).then(response => {
-      console.log('Deleted photo');
+      console.log('DELETEd photo');
     }).catch(error => {
       console.log('DELETE error', error);
     });
@@ -68,7 +69,13 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <Typography 
+            variant="h1"
+            color="primary"
+            align="center"
+          >
+          GALLERY OF MY LIFE
+          </Typography>
         </header>
         <GalleryForm 
           postPhoto={postPhoto}

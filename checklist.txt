@@ -23,5 +23,5 @@
     [X] delete button
         [X] server side DELETE
         [X] client side DELETE
-    [ ] material UI styling
+    [X] material UI styling
     [ ] implement uppy
