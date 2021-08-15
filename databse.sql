@@ -1,3 +1,4 @@
+//SGL file for creating database
 CREATE TABLE "gallery"(
 "id" SERIAL PRIMARY KEY,
 "path" VARCHAR(500),

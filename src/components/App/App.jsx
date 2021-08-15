@@ -1,3 +1,4 @@
+//importing necessary components
 import React from 'react';
 import './App.css';
 import {useState, useEffect} from 'react';
@@ -7,14 +8,16 @@ import GalleryForm from '../GalleryForm/GalleryForm';
 import Typography from '@material-ui/core/Typography';
 
 function App() {
-
+  //defining state
   const [galleryList, setGalleryList] = useState([]);
   const [photoLikes, setPhotoLikes] = useState(0);
 
+  //call fetchGallery function on load of page
   useEffect(() => {
     fetchGallery();
   }, []);
 
+  //GET request
   const fetchGallery = () => {
     Axios({
       method: 'GET',
@@ -25,8 +28,9 @@ function App() {
     }).catch(error => {
       console.log('GET error', error);
     });
-  };
+  }; //END GET request
 
+  //POST request
   const postPhoto = (newPhoto) => {
     Axios({
       method: 'POST',
@@ -38,8 +42,9 @@ function App() {
     }).catch(error => {
       console.log('POST error', error);
     });
-  };
+  }; //END POST request
 
+  //PUT request
   const likePhoto = (id) => {
     Axios({
       method: 'PUT',
@@ -51,8 +56,9 @@ function App() {
     }).catch (error => {
       console.log('PUT error', error);
     });
-  };
+  }; //END PUT request
 
+  //DELETE request
   const deletePhoto = (id) => {
     console.log('ID is', id);
     Axios({
@@ -63,9 +69,9 @@ function App() {
     }).catch(error => {
       console.log('DELETE error', error);
     });
-  };
+  }; //END DELETE request
 
-
+    //HTML being returned to 'root'
     return (
       <div className="App">
         <header className="App-header">
@@ -77,10 +83,12 @@ function App() {
           GALLERY OF MY LIFE
           </Typography>
         </header>
+        {/* Form component with props*/}
         <GalleryForm 
           postPhoto={postPhoto}
           fetchGallery={fetchGallery}
         />
+        {/* List component with props */}
         <GalleryList
           galleryList={galleryList}
           photoLikes={likePhoto}
@@ -91,4 +99,5 @@ function App() {
     );
 }
 
+//exporting component
 export default App;

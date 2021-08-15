@@ -1,3 +1,4 @@
+//importing components
 import { useState } from "react";
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -9,14 +10,16 @@ import CardContent from '@material-ui/core/CardContent';
 
 
 function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
-
+    //setting state
     const [photoOrDescription, setPhotoOrDescription] = useState(true);
 
+    //function to handle on click
     const togglePhotoClick = () => {
         console.log('SWITCH');
         setPhotoOrDescription(!photoOrDescription);
-    }
+    } //END togglePhotoClick
 
+    //function to toggle between photo and description
     const togglePhoto = () => {
         if (photoOrDescription) {
             return <Card variant="outlined">
@@ -36,17 +39,20 @@ function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
                         </CardContent>
                     </Card>
         }
-    }
+    } //END togglePhoto
 
+    //Function for showing hoy many likes a photo has
     const photoLiked = () => {
         photoLikes(data.id)
-    }
+    } //END photoLiked
 
+    //Function for deleting photo
     const photoDeleted = () => {
         deletePhoto(data.id);
         fetchGallery();
-    }
+    } //END photoDeleted
 
+    //HTML being returned
     return (
         <>
         <div className="photoDiv">
@@ -75,4 +81,5 @@ function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
     )
 }
 
+//exporting component
 export default GalleryItem;

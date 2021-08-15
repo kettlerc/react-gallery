@@ -1,3 +1,4 @@
+//importing components
 import {useState} from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -5,7 +6,7 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/styles';
 
-
+//using makeStyles function from MaterialUI
 const useStyles = makeStyles({
     field: {
         width: 700
@@ -13,13 +14,15 @@ const useStyles = makeStyles({
 })
 
 function GalleryForm({postPhoto}) {
-
+    //defining state
     let [newPhotoPath, setNewPhotoPath] = useState('');
     let [newPhotoDescription, setNewPhotoDescription] = useState('');
     let [newPhotoLikes, setNewPhotoLikes] = useState(0);
 
+    //variable for using MaterialUI function
     const classes = useStyles();
 
+    //Function for submitting form and clearing values after submit
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -33,8 +36,9 @@ function GalleryForm({postPhoto}) {
         setNewPhotoPath('');
         setNewPhotoDescription('');
         setNewPhotoLikes(0);
-    }
+    } //END onFormSubmit
 
+    //HTML being returned
     return (
         <>
         <Typography
@@ -56,6 +60,7 @@ function GalleryForm({postPhoto}) {
                 variant="outlined"
                 required
                 value={newPhotoPath}
+                // changes state to current value in input field
                 onChange={event => setNewPhotoPath(event.target.value)}
             />
             <Typography
@@ -70,6 +75,7 @@ function GalleryForm({postPhoto}) {
                 multiline
                 maxRows={4}
                 value={newPhotoDescription}
+                // changes state to current value in input field
                 onChange={event => setNewPhotoDescription(event.target.value)}
             />
             <div>
@@ -87,4 +93,5 @@ function GalleryForm({postPhoto}) {
     )
 }
 
+//exporting component
 export default GalleryForm;

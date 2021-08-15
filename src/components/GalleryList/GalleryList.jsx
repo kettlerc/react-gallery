@@ -1,8 +1,10 @@
+//importing components
 import GalleryItem from "../GalleryItem/GalleryItem";
 import Grid from "@material-ui/core/Grid";
 
 
 function GalleryList({galleryList, photoLikes, fetchGallery, deletePhoto}) {
+    //HTML being returned (in MaterialUI Grid system)
     return (
         <div>
             <Grid container spacing={3}>
@@ -31,4 +33,5 @@ function GalleryList({galleryList, photoLikes, fetchGallery, deletePhoto}) {
     )
 }
 
+//exporting component
 export default GalleryList;
