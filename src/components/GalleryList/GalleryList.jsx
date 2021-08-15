@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 function GalleryList({galleryList, photoLikes, fetchGallery, deletePhoto}) {
     return (
         <div>
-            <Grid container>
+            <Grid container spacing={3}>
                 {galleryList.map(gallery => {
                     return (
                         <Grid 

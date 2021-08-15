@@ -3,7 +3,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import Paper from "@material-ui/core/Paper"
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
 
 
 function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
@@ -17,9 +19,22 @@ function GalleryItem ({data, photo, photoLikes, deletePhoto, fetchGallery}) {
 
     const togglePhoto = () => {
         if (photoOrDescription) {
-            return <img className="image" src={photo.path} onClick={togglePhotoClick}/>
+            return <Card variant="outlined">
+                        <CardMedia 
+                            component="img"
+                            image={photo.path} 
+                            onClick={togglePhotoClick}
+                        />
+                    </Card>
         } else {
-            return <Paper onClick={togglePhotoClick}>{photo.description}</Paper>
+            return <Card variant="outlined">
+                        <CardContent onClick={togglePhotoClick}>
+                            <Typography
+                                variant="body1"
+                            >{photo.description}
+                            </Typography>
+                        </CardContent>
+                    </Card>
         }
     }
 
